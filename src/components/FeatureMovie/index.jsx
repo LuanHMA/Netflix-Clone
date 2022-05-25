@@ -1,20 +1,20 @@
 import { Container } from './style'
+import { Play, Plus } from 'phosphor-react'
 
 export function FeatureMovie({ item }){
     console.log(item);
     const date = new Date(item.first_air_date).getFullYear();
     let genresApi = item.genres;
-    let genres = []
+    let genres = [];
 
     genresApi.forEach(item=>{
         genres.push(item.name);
     })
 
-    console.log(genres);
+
 
     return ( 
-        <Container background={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}>
-            {/* <div>{item.original_name}</div> */}
+        <Container background={`https://image.tmdb.org/t/p/original${item.backdrop_path || item.poster_path}`}>
             <div className="feature-y">
                 <div className="feature-x">
                     <div className="feature-name">
@@ -27,8 +27,14 @@ export function FeatureMovie({ item }){
                     </div>
                     <div className="feature-description">{item.overview}</div>
                     <div className="feature-buttons">
-                        <a href="#" className="watch-button">Assistir</a>
-                        <a href="#" className="list-button">Minha Lista</a>
+                        <a href="#" className="watch-button">
+                            <Play size={24}  weight="fill" style={{marginRight: "4px"}}/>
+                            Assistir
+                        </a>
+                        <a href="#" className="list-button">
+                            <Plus size={24} style={{marginRight: "4px"}} />
+                            Minha Lista
+                        </a>
                     </div>
                     <div className="feature-generos">Gêneros: {genres.join(", ")}</div>
                 </div>

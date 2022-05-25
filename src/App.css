@@ -40,3 +40,12 @@ body{
         transform: rotate(360deg)
     }
 }
+
+@keyframes show{
+    from{
+        transform: scale(0.2);
+    }
+    to{
+        transform: scale(1);
+    }
+}

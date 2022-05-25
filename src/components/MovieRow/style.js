@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
     position: relative;
@@ -69,3 +69,17 @@ export const ListItem = styled.div`
     }
     
 `
+const Show = keyframes`
+    0%{
+        opacity: 0;
+        color: #000;
+        transform: scale(.2);
+    };
+    100%{
+        color: #fff;
+        opacity: 1;
+        transform: scale(1)
+    }
+`
+
+

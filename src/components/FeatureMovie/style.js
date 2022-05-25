@@ -4,8 +4,8 @@ export const Container = styled.section`
     height: 100vh;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-image: url(${props => `${props.background}`});
-
    
     .feature-y{
         width: inherit;
@@ -61,9 +61,12 @@ export const Container = styled.section`
     .feature-buttons{
         margin-top: 15px;
         margin-bottom: 15px;
+        display: flex;
         
         a{
-            display: inline-block;
+            display: flex;
+            align-items:center;
+            justify-content:center;
             font-size: 20px;
             font-weight: bold;
             padding: 12px 25px;

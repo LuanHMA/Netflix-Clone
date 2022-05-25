@@ -19,11 +19,11 @@ export function App(){
       setMovieList(list);
 
       //Pegando o filme em destaque
-      let originals = list.filter(item=> item.slug === "originals");
-      let randomChosen = Math.floor( Math.random() * originals[0].items.results.length -1 );
-      let chosen = originals[0].items.results[randomChosen];
+      let originals = list.filter(item=> item.slug === "originals");//Pega a lista de originais
+      let randomChosen = Math.floor( Math.random() * originals[0].items.results.length -1 );//Pega uma posição/série aleatoria da lista
+      let chosen = originals[0].items.results[randomChosen];//Armazena a série
       
-      let chosenInfo = await Tmdb.getMovieInfo(chosen.id, "tv");
+      let chosenInfo = await Tmdb.getMovieInfo(chosen.id, "tv");//Traz informações da série
 
       setFeatureData(chosenInfo);
 
